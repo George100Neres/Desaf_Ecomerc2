@@ -1,0 +1,187 @@
+
+{
+  "store.home": { 
+    "blocks": [
+        "search-result-layout.customQuery#home"
+    ]
+  },
+  "search-result-layout.customQuery#home": {
+       "props": {
+           "querySchema": {
+             "orderByField": "OrderByTopSalaDesc",
+             "hideUnavailableItems":true,
+             "maxItemsPerPage": 10,
+             
+             "queryField": "20,28", // Define numero Categorias
+             "mapField": "ft" // Define o tipo de busca
+         }
+        },
+        "blocks": [
+          "search-result-layout.desktop",
+          "search-not-found-layout"
+        ]
+  },
+   "depedencies ": {
+     "vtex.search-result": "3.x"
+   }
+   // Dentro do Desktop chamo search-content#lp
+ 
+{
+  "store.home": { 
+    "blocks": [
+        "search-result-layout.customQuery#home"
+    ]
+  },
+  "search-result-layout.customQuery#home": {
+       "props": {
+           "querySchema": {
+               "skulsFilter": "FIRST_AVAILABLE",
+               "simulationBehavior": "skip",
+               "macItemsPerPage": 12
+           }
+       },
+  "blocks": ["search-result-layout.desktop, search-result-layout.mobile"]
+  }, 
+   // Dentro do Desktop chamo search-content# que sao os filhos lp
+  "search-result-layout.desktop": {
+    "children": [
+    //  "flex-layout.row#searchbread",
+    //  "flex-layout.row#searchtitle",
+      "search-content#lp"
+    ],
+    "props": {
+      "preventRouteChange": true
+    }
+  },
+  "flex-layout.row#result": {
+    "children": [
+      "search-content#lp"
+    ]
+  },
+   "search-content#lp": {
+     "blocks": [
+       "gallery#lp", "not-found"
+     ]
+   },
+
+   // Product Summ
+   "product-summary.shelf#1": {
+     "children": [
+       "product-sumary-name",
+       "product-iamge#lp",
+       "vtex.product-highlights@2.x:product-highlights"
+     ]
+   },
+    
+   "product-sumamary.shelf#lp": {
+     "children": [
+       "modal-trigger#lp",
+       "product-summary-name",
+       "product-summary-description",
+       "product-summary-image",
+       "product-summary-price",
+       "product-summary-skul-selector",
+       "product-summary-boy-button"
+     ],
+      "props": {
+        "blockClass": ["Oba","teste"]
+
+      }
+   },
+
+    // coloquei um identificador em gallery#
+    "gallery#lp": {
+      "props": {
+        "layouts": [
+          {
+            "name": "grid",
+            "component": "GridSummary",
+            "itemsPerRow": {
+            "(min-width-1300px)": 4,
+            "desktop": 3,
+            "tablet": 3,
+            "phone": 2
+
+            }
+          },
+         
+          {
+            "name": "list",
+            "components": "ListSummary",
+            "itemsPerRow":1
+          }
+        ],
+        "ListSummary": "product-summary.shelf#lp",
+        "GridSummary": "product-summary.shelf#lp"
+      }
+    },
+
+    "product-summary.shelf#lp": {
+      "children": [
+        "product-summary-name",
+        "product-summary-image#lp",
+        "vtex.product-highlights@2.x>product-highlights#1",
+        "vtex.product-highlights@2.x>product-highlights#2",
+        "product-summary-price" //Ira aparecer os preeços da tabela produtos
+        "add-to-cart-button#lp"
+      ]
+    },
+    "products-images#lp": {
+      "props": {
+        "showNavigationArrows": true,
+        "showPaginationDate": true
+      }
+    },
+
+     "vtex.product-highlights@2.x:product-higlights": {
+        "children": ["product-highlight-text"]
+     },
+     "product-highlight-text": {
+       "props": {
+         "message": "{Bem Vindo!}",
+         "link": "/collection/{highlighId}"
+        
+       }
+     },
+     "add-to-cart-button#lp": {
+       "props": {
+         "onClickBehavior": "go-to-product-page",
+         "text": "Ver detalhes do Produto"
+       }
+     }
+
+    },
+    "modal-trigger#lp": {
+      "children": [
+        "model-layout#lp",
+        "rich-text#example"
+      ]
+    },
+
+    "rich-text#lp": {
+      "props": {
+        "text": "Oba"
+      }
+    },
+    // Mudar o layout
+    "model-layout#lp": {
+      "children": [
+        "video#lp"
+      ]
+    },
+
+   /* "video#lp": {
+       "props": {
+         "width": "100%",
+         "height": "600px",
+         "loop": false,
+         "autoPlay": true,
+         "autoPlay": false,
+         "src": //Adicionar um video,
+         "blocksClass": "videof1"
+       }
+    }*/
+}
+  
+
+

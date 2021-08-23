@@ -1,0 +1,16 @@
+ /*{
+    "store.home": { 
+      "blocks": [
+          "search-result-layout.customQuery#home"
+      ]
+    }, */
+    "search-result-layout.customQuery#home": {
+         "props": {
+             "querySchema": {
+                 "skulsFilter": "FIRST_AVAILABLE",
+                 "simulationBehavior": "skip"
+             }
+         }
+    },
+  
+  }

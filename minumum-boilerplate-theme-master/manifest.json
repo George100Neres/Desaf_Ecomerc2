@@ -1,7 +1,7 @@
 {
-  "vendor": "hiringcoders2021",
-  "name": "lojavirtual",
-  "version": "0.0.1",
+  "vendor": "vtex",
+  "name": "minimumtheme",
+  "version": "0.1.1",
   "builders": {
     "styles": "2.x",
     "store": "0.x",
@@ -31,7 +31,6 @@
     "vtex.rich-text": "0.x",
     "vtex.store-drawer": "0.x",
     "vtex.locale-switcher": "0.x",
-    "vtex.product-highlights": "2.x",
     "vtex.product-quantity": "1.x",
     "vtex.product-identifier": "0.x",
     "vtex.product-specification-badges": "0.x",
@@ -43,14 +42,9 @@
     "vtex.responsive-layout": "0.x",
     "vtex.slider-layout": "0.x",
     "vtex.iframe": "0.x",
-    "vtex.store.video": "1.x",
     "vtex.breadcrumb": "1.x",
     "vtex.sticky-layout": "0.x",
-    "vtex.modal-layout": "0.x",
-    "vtex.add-to-cart-button": "0.x",
-    "vtex-product-higlights": "2.x",
-    "vtex.css-handles": "1.x",
-    " vtex.search-result ": " 3.x "
+    "vtex.add-to-cart-button": "0.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

@@ -1,0 +1,25 @@
+// store/blocks/search-landing.jsonc
+{
+    "store.custom#landing": {
+      "blocks": [
+        "image#landingbanner",
+      "search-result-layout.customQuery"
+      ]
+    },
+    "image#landingbanner": {
+        "props": {
+          "src": "https://storecomponents.vtexim.com.br/arquivos/box.png",
+          "minwidth": "100%"
+        }
+    },
+    "search-result-layout.customQuery": {
+        "props": {
+            "querySchema": {
+                "orderByField": "OrderByReleasedDateDESC",
+                "hideUnavaibleItems": true,
+                "maxItemsPerPage": 8, // maximo numero de paginas
+                "queryField": "Camera"
+            }
+        }
+    }
+  }
